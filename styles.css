@@ -1,0 +1,125 @@
+@keyframes border {
+  0% {
+    border-bottom: 2px solid hotpink;
+  }
+  100% {
+    border-bottom: 40px solid hotpink;
+  }
+}
+
+@keyframes maskBorder {
+  0% {
+    clip: rect(0, 50px, 10px, 0);
+  }
+  20% {
+    clip: rect(0, 200px, 1px, 0);
+  }
+  35% {
+    clip: rect(0, 200px, 10px, 200px);
+  }
+  50% {
+    clip: rect(0px, 200px, 50px, 190px);
+  }
+  60% {
+    clip: rect(40px, 200px, 50px, 190px);
+  }
+  70% {
+    clip: rect(40px, 200px, 50px, 0px);
+  }
+  85% {
+    clip: rect(40px, 10px, 50px, 0px);
+  }
+  90% {
+    clip: rect(0, 10px, 50px, 0px);
+  }
+  100% {
+    clip: rect(0, 10px, 10px, 0px);
+  }
+}
+
+body {
+  background-color: #000000d3;
+}
+
+form {
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 3% 10% 10% 3%;
+  margin: 50px 0px 0px 600px;
+  padding: 50px;
+  max-width: fit-content;
+}
+img,
+form {
+  border-radius: 10% 3% 3% 10%;
+}
+h1 {
+  color: hotpink;
+  font-family: Charm;
+  font-size: 1.4rem;
+  font-weight: lighter;
+  word-spacing: 0px;
+  margin-bottom: 50px;
+}
+#username,
+#password {
+  background-color: inherit;
+  border-style: hidden;
+  border-bottom: 2px solid hotpink;
+  margin-bottom: 20px;
+  padding: 10px 0px;
+  width: 100%;
+  font-family: Charmonman;
+  font-size: 1.1rem;
+}
+#username:hover,
+#password:hover {
+  animation: border 0.5s ease-out 1;
+  background-color: inherit;
+  border-bottom: 40px solid hotpink;
+  border-radius: 4px;
+}
+button {
+  text-align: center;
+  font-size: larger;
+  font-weight: 900;
+  margin: 8px 0px 20px 20px;
+  min-width: 80%;
+  height: 30px;
+  background-color: inherit;
+  border-style: hidden;
+  color: hotpink;
+  background-image: href("./circle.png");
+  font-family: Charmonman;
+}
+button:hover {
+  transform: scale(1.2);
+}
+aside {
+  margin: 5% 8% 10%;
+  /* width: 100%; */
+}
+.login {
+  position: relative;
+  border-radius: 5px;
+  width: 200px;
+}
+.border {
+  border: 2px solid #c2185b;
+  border-radius: 5px;
+  clip: rect(0, 0, 0, 0);
+  animation: maskBorder 1.4s infinite;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  bottom: 4px;
+  right: 4px;
+}
+@media screen and (max-width: 576px) {
+  form {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    /* width: 100%;
+    height: 100%; */
+  }
+}
