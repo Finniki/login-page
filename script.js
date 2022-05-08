@@ -23,22 +23,35 @@ password.style.color = randomColor(
 
 //display messages
 const span = document.createElement("span");
-span.innerHTML = "This field cannot be empty";
 const span1 = document.createElement("span");
-span1.textContent = `Both fields cannot be empty`;
 const span2 = document.createElement("span");
+span.innerHTML = "This field cannot be empty";
+span1.textContent = `Both fields cannot be empty`;
 span2.textContent = `LOOL. Did you really think that was going to work? 🤣🤣🤣`;
-const removeMsg = () => (span.style.display = "hidden");
+
 //Form Functionality
 btnLogin.addEventListener("click", function () {
   if (userName.value == "" && passWord.value == "") {
     noPasswordMsg.appendChild(span1);
+    setTimeout(function () {
+      noPasswordMsg.removeChild(span1);
+    }, 2000);
   } else if (userName.value == "") {
     noUsernameMsg.appendChild(span);
+    setTimeout(function () {
+      noUsernameMsg.removeChild(span);
+    }, 2000);
   } else if (passWord.value == "") {
     noPasswordMsg.appendChild(span);
+    setTimeout(function () {
+      noPasswordMsg.removeChild(span);
+    }, 2000);
   } else {
+    userName.value = "";
+    passWord.value = "";
     loginMsg.appendChild(span2);
+    setTimeout(function () {
+      loginMsg.removeChild(span2);
+    }, 2000);
   }
-  console.log(userName);
 });
